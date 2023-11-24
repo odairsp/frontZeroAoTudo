@@ -37,9 +37,15 @@ const Crud = () => {
     const [globalFilter, setGlobalFilter] = useState('');
     const toast = useRef<Toast>(null);
     const dt = useRef<DataTable<any>>(null);
+    const usuarioService = new UsuarioService();
 
     useEffect(() => {
-        // UsuarioService.getPsuarios().then((data) => setUsuarios(data as any));
+        usuarioService.listarTodos()
+            .then((response) => {
+                setUsuarios(response.data);
+            }).catch((error) => {
+                console.log(error);
+            })
     }, []);
 
     const openNew = () => {
