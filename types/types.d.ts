@@ -30,6 +30,7 @@ type ChildContainerProps = {
 };
 
 export type {
+    Projeto,
     Page,
     AppBreadcrumbProps,
     Breadcrumb,
